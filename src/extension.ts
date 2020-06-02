@@ -30,13 +30,13 @@ export function activate(context: vscode.ExtensionContext) {
     Logger.init(configuration);
     Logger.info("Init logger successfully");
 
-    disposables.push(vscode.languages.registerDefinitionProvider(['cpp', 'c'],
+    disposables.push(vscode.languages.registerDefinitionProvider(['cpp', 'c', 'jce'],
                      new DefinitionProvider(global)));
-    disposables.push(vscode.languages.registerReferenceProvider(['cpp', 'c'],
+    disposables.push(vscode.languages.registerReferenceProvider(['cpp', 'c', 'jce'],
                      new ReferenceProvider(global)));
-    disposables.push(vscode.languages.registerCompletionItemProvider(['cpp', 'c'],
+    disposables.push(vscode.languages.registerCompletionItemProvider(['cpp', 'c', 'jce'],
                      new CompletionItemProvider(global, configuration)));
-    disposables.push(vscode.languages.registerDocumentSymbolProvider(['cpp', 'c'],
+    disposables.push(vscode.languages.registerDocumentSymbolProvider(['cpp', 'c', 'jce'],
                      new DocumentSymbolProvider(global)));
 
     disposables.push(vscode.commands.registerCommand('extension.showGlobalVersion',

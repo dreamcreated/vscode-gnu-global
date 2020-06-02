@@ -14,7 +14,7 @@ export default class GlobalAutoUpdateHandler {
     }
 
     autoUpdateTags(docChanged: vscode.TextDocument) {
-        if (docChanged.languageId !== "cpp" && docChanged.languageId !== "c")
+        if (docChanged.languageId !== "cpp" && docChanged.languageId !== "c" && docChanged.languageId !== "jce")
             return;
 
         try {
